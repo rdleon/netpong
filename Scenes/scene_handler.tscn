@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://hs6dqectersc"]
+
+[ext_resource type="PackedScene" uid="uid://dbx4n71caonra" path="res://Scenes/player.tscn" id="1_o8i4a"]
+[ext_resource type="PackedScene" uid="uid://bnletd558fpyp" path="res://Scenes/ball.tscn" id="2_3awd0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nnyq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17q0h"]
+size = Vector2(1300, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osgqm"]
+size = Vector2(10, 740)
+
+[node name="SceneHandler" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_o8i4a")]
+position = Vector2(25, 270)
+
+[node name="Ball" parent="." instance=ExtResource("2_3awd0")]
+
+[node name="Border" type="StaticBody2D" parent="."]
+position = Vector2(639, 0)
+physics_material_override = SubResource("PhysicsMaterial_nnyq7")
+
+[node name="Top" type="CollisionShape2D" parent="Border"]
+shape = SubResource("RectangleShape2D_17q0h")
+
+[node name="Bottom" type="CollisionShape2D" parent="Border"]
+position = Vector2(0, 721)
+shape = SubResource("RectangleShape2D_17q0h")
+
+[node name="Left" type="CollisionShape2D" parent="Border"]
+position = Vector2(-640, 360)
+shape = SubResource("RectangleShape2D_osgqm")
+
+[node name="Right" type="CollisionShape2D" parent="Border"]
+position = Vector2(641, 360)
+shape = SubResource("RectangleShape2D_osgqm")
+
+[editable path="Ball"]
