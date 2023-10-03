@@ -6,6 +6,8 @@
 size = Vector2(20, 144)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_mok6s")
 
 [node name="ColorRect" type="ColorRect" parent="."]

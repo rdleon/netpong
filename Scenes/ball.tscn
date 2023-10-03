@@ -5,10 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovy1m"]
 radius = 5.0
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="CharacterBody2D"]
 position = Vector2(644, 347)
-gravity_scale = 0.0
-can_sleep = false
 script = ExtResource("1_58hh5")
 metadata/_edit_group_ = true
 

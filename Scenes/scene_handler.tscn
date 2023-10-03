@@ -11,7 +11,7 @@ size = Vector2(1300, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_osgqm"]
 size = Vector2(10, 740)
 
-[node name="SceneHandler" type="Node"]
+[node name="PlayField" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_o8i4a")]
 position = Vector2(25, 270)
@@ -20,6 +20,8 @@ position = Vector2(25, 270)
 
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(639, 0)
+collision_layer = 3
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_nnyq7")
 
 [node name="Top" type="CollisionShape2D" parent="Border"]
